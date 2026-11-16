@@ -93,13 +93,13 @@ export function Timeline() {
         />
         <div className="space-y-16 md:space-y-24">
           {visible.map((entry, i) => (
-            <Entry key={entry.range} entry={entry} index={i} />
+            <Entry key={`${entry.range}-${entry.role}`} entry={entry} index={i} />
           ))}
           <AnimatePresence initial={false}>
             {expanded &&
               rest.map((entry, i) => (
                 <motion.div
-                  key={entry.range}
+                  key={`${entry.range}-${entry.role}`}
                   initial={{ opacity: 0, height: 0 }}
                   animate={{ opacity: 1, height: "auto" }}
                   exit={{ opacity: 0, height: 0 }}
