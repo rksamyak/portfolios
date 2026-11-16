@@ -71,8 +71,8 @@ export function CTA() {
           <a href={SITE.socials.linkedin} className="hover:text-foreground">
             LinkedIn
           </a>
-          <a href={SITE.socials.x} className="hover:text-foreground">
-            X
+          <a href={SITE.socials.website} className="hover:text-foreground">
+            Mytechz
           </a>
           <a href={SITE.socials.email} className="hover:text-foreground">
             Email

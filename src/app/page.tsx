@@ -6,7 +6,6 @@ import { About } from "@/components/sections/about";
 import { Features } from "@/components/sections/features";
 import { Projects } from "@/components/sections/projects";
 import { Timeline } from "@/components/sections/timeline";
-import { Dashboards } from "@/components/sections/dashboards";
 import { Journal } from "@/components/sections/journal";
 import { MarqueeBands } from "@/components/sections/marquee-bands";
 import { CTA } from "@/components/sections/cta";
@@ -23,7 +22,6 @@ export default function Home() {
         <Features />
         <Projects />
         <Timeline />
-        <Dashboards />
         <Journal />
         <MarqueeBands />
         <CTA />

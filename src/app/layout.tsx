@@ -7,18 +7,18 @@ import { Cursor } from "@/components/ui/cursor";
 import { SITE } from "@/content/site";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://ravianand.dev"),
+  metadataBase: new URL("https://portfolios-xf9c.vercel.app"),
   title: {
     default: `${SITE.name} — ${SITE.role}`,
     template: `%s — ${SITE.name}`,
   },
   description:
-    "Editorial portfolio of Ravi Anand, an AI & software engineer building agentic automation, retrieval systems and production interfaces.",
+    "Portfolio of Ravi Kumara H S — founder of Mytechz.com, building AI agents, WhatsApp automation and web applications.",
   openGraph: {
     title: `${SITE.name} — ${SITE.role}`,
     description:
-      "AI & software engineer building agentic automation, retrieval systems and production interfaces.",
-    url: "https://ravianand.dev",
+      "Founder of Mytechz.com — AI agents, WhatsApp automation and web applications.",
+    url: "https://portfolios-xf9c.vercel.app",
     siteName: SITE.name,
     type: "website",
   },

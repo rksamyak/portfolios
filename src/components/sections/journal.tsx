@@ -1,4 +1,4 @@
-import { ArrowRight, ArrowUpRight } from "lucide-react";
+import Image from "next/image";
 import { POSTS } from "@/content/posts";
 import { SectionLabel } from "@/components/ui/section-label";
 import { Reveal } from "@/components/ui/reveal";
@@ -11,22 +11,15 @@ export function Journal() {
     >
       <div className="flex items-end justify-between">
         <div>
-          <SectionLabel>Journal</SectionLabel>
+          <SectionLabel>Certifications</SectionLabel>
           <Reveal>
             <h2 className="mt-4 text-4xl font-black uppercase tracking-tight text-foreground md:text-6xl">
-              Notes From
+              Certifications
               <br />
-              The Work.
+              &amp; Workshops.
             </h2>
           </Reveal>
         </div>
-        <a
-          href="#journal"
-          className="hidden items-center gap-2 font-mono text-xs uppercase tracking-[0.2em] text-foreground/70 transition-colors hover:text-foreground sm:inline-flex"
-        >
-          View Gallery
-          <ArrowUpRight className="size-3.5" />
-        </a>
       </div>
 
       <div className="mt-16 grid gap-px border border-border bg-border sm:grid-cols-3">
@@ -36,7 +29,24 @@ export function Journal() {
             delay={i * 0.08}
             className="group bg-background p-8 md:p-10"
           >
-            <a href={post.href} className="flex h-full flex-col">
+            <a
+              href={post.href}
+              {...(post.href.endsWith(".pdf")
+                ? { target: "_blank", rel: "noopener noreferrer" }
+                : {})}
+              className="flex h-full flex-col"
+            >
+              {post.image && (
+                <div className="relative mb-8 aspect-[1.414/1] w-full overflow-hidden border border-border bg-white">
+                  <Image
+                    src={post.image}
+                    alt={`${post.title} certificate`}
+                    fill
+                    sizes="(max-width: 640px) 90vw, 30vw"
+                    className="object-contain transition-transform duration-500 group-hover:scale-[1.03]"
+                  />
+                </div>
+              )}
               <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-foreground/40">
                 {post.category} — {post.year}
               </p>
@@ -46,19 +56,16 @@ export function Journal() {
               <p className="mt-3 flex-1 text-sm leading-relaxed text-foreground/60">
                 {post.excerpt}
               </p>
+              {post.href.endsWith(".pdf") && (
+                <span className="mt-6 font-mono text-[10px] uppercase tracking-[0.2em] text-foreground/70 group-hover:text-foreground">
+                  View Certificate ↗
+                </span>
+              )}
               <span className="mt-8 block h-px w-full origin-left scale-x-0 bg-foreground transition-transform duration-500 group-hover:scale-x-100" />
             </a>
           </Reveal>
         ))}
       </div>
-
-      <a
-        href="#journal"
-        className="group mt-12 inline-flex items-center gap-2 font-mono text-xs uppercase tracking-[0.2em] text-foreground/70 transition-colors hover:text-foreground"
-      >
-        Browse Full Archive
-        <ArrowRight className="size-3.5 transition-transform group-hover:translate-x-1" />
-      </a>
     </section>
   );
 }

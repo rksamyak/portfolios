@@ -8,7 +8,7 @@ export type GithubStats = typeof GITHUB_FALLBACK;
 export type KaggleStats = typeof KAGGLE_FALLBACK;
 export type WakatimeStats = typeof WAKATIME_FALLBACK;
 
-const GITHUB_USER = process.env.GITHUB_USERNAME ?? "ravianand";
+const GITHUB_USER = process.env.GITHUB_USERNAME ?? "rksamyak";
 
 /**
  * Fetches contribution data from the GitHub GraphQL API.
